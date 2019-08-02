@@ -1,1 +1,2 @@
-module.exports = require('primus')
+var Primus = require('primus');
+exports.Primus = Primus;

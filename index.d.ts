@@ -5,8 +5,7 @@ export interface IPrimusParser {
   encoder: (data: any, fn: (error: Error, response: any) => void) => void;
   decoder: (data: any, fn: (error: Error, response: any) => void) => void;
 }
-
-export default class Primus {
+export declare class Primus {
   constructor(server: http.Server, options?: IPrimusOptions);
   authorize(req: http.ClientRequest, done: () => void): void;
   before(event: string, cb: () => void): void;
