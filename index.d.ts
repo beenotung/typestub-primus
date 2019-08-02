@@ -29,6 +29,7 @@ export default class Primus {
   transforms(event: string, parser: (packet: any, next: any) => void): void; // might be better tied to a TSD for https://github.com/primus/emits
   use(name: string, plugin: Object): void;
   write(data: any): void;
+  plugin(name: string, module: any): void;
 }
 
 export interface IPrimusOptions {

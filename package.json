@@ -1,25 +1,30 @@
 {
   "bugs": {
-    "url": "https://github.com/FREEZX/types-primus/issues"
+    "url": "https://github.com/beenotung/typestub-primus/issues"
   },
   "contributors": [
     {
       "name": "Kristijan Trajkovski",
       "url": "https://github.com/FREEZX"
+    },
+    {
+      "name": "Beeno Tung",
+      "url": "https://github.com/beenotung"
     }
   ],
   "dependencies": {
-    "@types/node": "*"
+    "@types/node": "*",
+    "primus": "^7.3.3"
   },
   "deprecated": false,
   "description": "TypeScript definitions for primus",
-  "homepage": "https://github.com/FREEZX/types-primus",
+  "homepage": "https://github.com/beenotung/typestub-primus",
   "license": "MIT",
   "main": "",
-  "name": "typescript-primus",
+  "name": "typestub-primus",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FREEZX/types-primus.git"
+    "url": "git+https://github.com/beenotung/typestub-primus.git"
   },
   "scripts": {},
   "typeScriptVersion": "2.0",
