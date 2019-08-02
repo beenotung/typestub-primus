@@ -20,7 +20,8 @@
   "description": "TypeScript definitions for primus",
   "homepage": "https://github.com/beenotung/typestub-primus",
   "license": "MIT",
-  "main": "",
+  "main": "index.js",
+  "types": "index.d.ts",
   "name": "typestub-primus",
   "repository": {
     "type": "git",
