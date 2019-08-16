@@ -29,6 +29,7 @@ export declare class Primus {
   use(name: string, plugin: Object): void;
   write(data: any): void;
   plugin(name: string, module: any): void;
+  save(filename: string): void;
 }
 
 export interface IPrimusOptions {
