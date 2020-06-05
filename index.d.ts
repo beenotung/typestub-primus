@@ -31,6 +31,10 @@ export declare class Primus {
   write(data: any): void;
   plugin(name: string, module: any): void;
   save(filename: string): void;
+
+  // querystringify
+  querystring(query: string): object | any;
+  querystringify(query: object | any): string;
 }
 
 export interface IPrimusOptions {
