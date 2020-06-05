@@ -19,7 +19,7 @@ export declare class Primus {
   end(): void;
   forEach(cb: (spark: ISpark, id: string, connections: any) => void): void;
   id(cb: (id: any) => void): void;
-  library(): void;
+  library(): string;
   on(event: string, cb: (spark: ISpark) => void): void;
   open(): void;
   remove(name: string): void;
