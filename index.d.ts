@@ -1,5 +1,6 @@
 import * as http from 'http';
 import { Socket } from 'net';
+import { Url } from 'url';
 
 export interface IPrimusParser {
   encoder: (data: any, fn: (error: Error, response: any) => void) => void;
@@ -7,10 +8,10 @@ export interface IPrimusParser {
 }
 export declare class Primus {
   constructor(server: http.Server, options?: IPrimusOptions);
-  authorize(req: http.ClientRequest, done: () => void): void;
+  authorize(req: http.IncomingMessage, done: () => void): void;
   before(event: string, cb: () => void): void;
-  before(event: string, cb: (req: http.ClientRequest, res: http.ServerResponse, next: any) => void): void;
-  before(event: string, cb: (req: http.ClientRequest, res: http.ServerResponse) => void): void;
+  before(event: string, cb: (req: http.IncomingMessage, res: http.ServerResponse, next: any) => void): void;
+  before(event: string, cb: (req: http.IncomingMessage, res: http.ServerResponse) => void): void;
   destroy(): void;
   disable(name: string): void;
   emits(event: string, parser: (next: any, parser: any) => void): void; // might be better tied to a TSD for https://github.com/primus/emits
@@ -73,12 +74,21 @@ export interface IPrimusConnectOptions {
   };
 }
 
+export type SparkRequest = http.IncomingMessage & http.ClientRequest & {
+  upgrade: boolean
+  client: Socket
+  parser: null | any
+  uri: Url
+  query: object | any
+  originalUrl: string
+}
+
 export interface ISpark {
   headers: any[];
   address: string;
   query: string;
   id: string;
-  request: http.ClientRequest;
+  request: SparkRequest;
 
   write(data: any): void;
   end(data?: any, options?: Object): void;
