@@ -25,6 +25,7 @@ export declare class Primus {
   remove(name: string): void;
   socket: Socket;
   static createSocket(options?: IPrimusOptions): Socket;
+  static createServer(onConnection: (spark:ISpark) => void, options?: IPrimusOptions):Primus;
   transform(event: string, cb: (packet: any) => void): void;
   transforms(event: string, parser: (packet: any, next: any) => void): void; // might be better tied to a TSD for https://github.com/primus/emits
   use(name: string, plugin: Object): void;
@@ -46,7 +47,8 @@ export interface IPrimusOptions {
   headers?: boolean;
   maxAge?: string;
   methods?: string;
-  origins?: string;
+  origins?: string; // for client
+  port?:number; // for server
   parser?: 'JSON' | 'binary' | 'EJSON' | IPrimusParser;
   pathname?: string;
   plugin?: any;
