@@ -11,6 +11,8 @@ export interface SocketConstructor {
 }
 export declare class Primus {
   constructor(server: http.Server, options?: IPrimusOptions);
+  constructor(url: string, options?: IPrimusOptions);
+  static connect(url: string, options?: IPrimusOptions): Primus;
   authorize(req: http.IncomingMessage, done: () => void): void;
   before(event: string, cb: () => void): void;
   before(event: string, cb: (req: http.IncomingMessage, res: http.ServerResponse, next: any) => void): void;
