@@ -74,7 +74,7 @@ export interface IPrimusConnectOptions {
 }
 
 export interface ISpark {
-  headers: any[];
+  headers: http.IncomingHttpHeaders;
   address: string;
   query: string;
   id: string;
