@@ -85,7 +85,7 @@ export interface IPrimusConnectOptions {
   };
 }
 
-export type SparkRequest = http.IncomingMessage & http.ClientRequest & {
+export type SparkRequest = http.IncomingMessage & Omit<http.ClientRequest, 'aborted'> & {
   upgrade: boolean
   client: Socket
   parser: null | any

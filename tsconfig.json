@@ -4,15 +4,14 @@
         "lib": [
             "es6"
         ],
+        "strict": true,
         "noImplicitAny": true,
         "noImplicitThis": true,
-        "strictNullChecks": false,
+        "strictNullChecks": true,
         "strictFunctionTypes": true,
-        "baseUrl": "../",
-        "typeRoots": [
-            "../"
+        "types": [
+            "node"
         ],
-        "types": [],
         "noEmit": true,
         "forceConsistentCasingInFileNames": true
     },
